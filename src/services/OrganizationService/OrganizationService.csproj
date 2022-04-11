@@ -1,5 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\DTO\DTO.csproj" />
+    <ProjectReference Include="..\..\common\EventManagement\EventManagement.csproj" />
+    <ProjectReference Include="..\..\common\Kernel\Kernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
