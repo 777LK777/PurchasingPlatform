@@ -1,7 +1,7 @@
-namespace DTO.Events
+namespace DTO.Events;
+
+public class ApplicationForRegistrationReceived : EventArgs
 {
-    public class ApplicationForRegistrationReceived
-    {
-        public string Email { get; set; }
-    }
+    public DateTime OccuredOn { get; set; }
+    public string Email { get; set; }
 }
