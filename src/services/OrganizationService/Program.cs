@@ -1,8 +1,8 @@
 using FluentValidation;
 
 using DTO.RestRequests;
-using EventManagement.DI;
 using Kernel.LoggingEngine;
+using EventManagement.DI.Extensions;
 using OrganizationService.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddTransient<IValidator<ApplicationForRegistrationRequest>, ApplicationForRegistrationRequestValidator>()
     .AddTransient<ILoggerProvider, LoggerProvider>()
-    .AddEventPublisher()
+    .AddEventManager(cfg =>
+        cfg.AddEventPublisher()
+    )
     .AddLogging(log =>
     {
         log.ClearProviders();
